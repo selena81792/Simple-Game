@@ -32,7 +32,7 @@ func _on_MobTimer_timeout():
     add_child(mob)
     var direction = $MobPath/MobSpawnLocation.rotation + PI / 2
     mob.position = $MobPath/MobSpawnLocation.position
-    direction += rand_range(-PI / 4, PI / 4)
-    mob.rotation = direction
     mob.linear_velocity = Vector2(mob.speed, 0)
     mob.linear_velocity = mob.linear_velocity.rotated(direction)
+    $HUD.connect("start_game", mob, "_on_start_game")
+
