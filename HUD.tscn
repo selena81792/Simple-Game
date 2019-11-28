@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
+size = 40
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -32,24 +32,25 @@ text = "Score: 0"
 align = 1
 
 [node name="MessageLabel" type="Label" parent="."]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -39.0
-margin_bottom = 39.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_top = 100.0
+margin_right = 512.0
+margin_bottom = 78.0
 custom_fonts/font = SubResource( 2 )
 text = "Pokemon Arena"
 align = 1
 
 [node name="StartButton" type="Button" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 margin_left = -90.0
-margin_top = -200.0
+margin_top = -50.0
 margin_right = 90.0
-margin_bottom = -100.0
+margin_bottom = 50.0
 custom_fonts/font = SubResource( 3 )
 shortcut = SubResource( 5 )
 text = "Start"
