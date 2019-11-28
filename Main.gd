@@ -34,5 +34,6 @@ func _on_MobTimer_timeout():
     mob.position = $MobPath/MobSpawnLocation.position
     mob.linear_velocity = Vector2(mob.speed, 0)
     mob.linear_velocity = mob.linear_velocity.rotated(direction)
+    mob.set_animation(mob.linear_velocity)
     $HUD.connect("start_game", mob, "_on_start_game")
 
