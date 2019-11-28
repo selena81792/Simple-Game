@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+export var speed = 150
+
 func _ready():
     $AnimatedSprite.animation = "down"
 
