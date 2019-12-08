@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Bomb.tscn" type="PackedScene" id=6]
+[ext_resource path="res://bg.png" type="Texture" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -46,6 +47,11 @@ curve = SubResource( 1 )
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="Bomb" parent="." instance=ExtResource( 6 )]
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 510, 300 )
+z_index = -10
+texture = ExtResource( 7 )
 [connection signal="create_bomb" from="Player" to="." method="_on_Player_create_bomb"]
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
