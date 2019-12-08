@@ -21,3 +21,4 @@ func _on_Visibility_screen_exited():
 
 func _on_start_game():
     queue_free()
+
