@@ -13,15 +13,13 @@ func _ready():
 #func _process(delta):
 #	pass
 func play():
-	print("Explosion.play")
 	call_deferred("show")
 	$AnimatedSprite.call_deferred("play")
 	
 	
 
 func _on_Explosion_body_entered(body):
-	play()
+	#play()
 	body.free()
 	emit_signal("kill")
-	print("Explosion.on_explosion_body")
 

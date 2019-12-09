@@ -3,6 +3,7 @@ extends Area2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var screen_size
 const SPAWN_OFFSET = 30
 signal explode()
 const VELOCITY = 4
@@ -13,6 +14,7 @@ onready var Explosion_scene = preload("res://Explosion.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
+	screen_size = get_viewport_rect().size
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,6 +39,8 @@ func _process(delta):
 		explosion_time += delta
 	if(explosion_time > 1):
 		queue_free()
+	position.x = clamp(position.x, 70, screen_size.x - 70)
+	position.y = clamp(position.y, 55, screen_size.y - 55)
 	
 func start(posit, direction):
 	$Timer.start(1);
@@ -59,7 +63,6 @@ func _on_Bomb_body_entered(body):
 	explode()
 	
 func explode():
-	print("Bomb.explode")
 	var explosion = Explosion_scene.instance()
 	explosion.call_deferred("play")
 	emit_signal("explode")
